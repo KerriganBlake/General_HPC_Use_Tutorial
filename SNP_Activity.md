@@ -3,6 +3,7 @@ SNP Activity
 
 You are a researcher interested in studying SNPs in the coding region of each human chromosome individually. You know that you want to use hg19 and snp146, and you are able to find the location full dataset (including all human chromosomes) through the downloads page of UCSC database. Since you will want to perform a lot of editing on this file, you decide to download it directly onto your university's HPC which has all the software you need. 
 
+ <a name="download"></a>
 Downloading and Unzipping Files
 ------
 
@@ -33,7 +34,7 @@ You should see the following (without header labels):
 | 585	| chr1 | 69115	| 69116	| rs757299236	| NM_001005484	| 2	| 2	| 8,42,	| G,A,	| GGT,GAT, | 	G,D, |
 | 585	| chr1 | 69133	| 69134	| rs781394307	| NM_001005484	| 2	| 2	| 8,42,	| A,G,	| GAA,GGA, | 	E,G, |
 
-
+ <a name="restructure"></a>
 Restructure Data
 ------
 
@@ -80,6 +81,7 @@ sed -i 's/,$//' unsorted_reformatted_chr1_snp146.txt
 
 ### Exercise: Use sed to remove "chr" from column 2 without making a new file
 
+ <a name="reorder"></a>
 Reorder Data
 ------
 
@@ -95,7 +97,7 @@ sort -V -k 1,1 unsorted_reformatted_chr1_snp146.txt > sorted_reformatted_chr1_sn
 
 You decide to investigate phosphorylatable residues (namely, S,T, and Y). To do so, you seperate out your sorted file into three seperate files containing peptides S, T and Y respectively using awk. You will name each file S_peptides.txt, T_peptides.txt, and Y_peptides.txt respectively.
 
-
+ <a name="rename"></a>
 Renaming Files (Batch)
 ------
 After generating the S, T, and Y files, you realize that the software requires files to have a ".snp" extension rather than ".txt". You decide you to rename your files rather than recreating them using bash.
