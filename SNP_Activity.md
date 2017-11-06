@@ -1,4 +1,4 @@
-SNP Activity
+Data Parsing: SNP Activity
 ==============
 
 You are a researcher interested in studying SNPs in the coding region of each human chromosome individually. You know that you want to use hg19 and snp146, and you are able to find the location full dataset (including all human chromosomes) through the downloads page of UCSC database. Since you will want to perform a lot of editing on this file, you decide to download it directly onto your university's HPC which has all the software you need. 
