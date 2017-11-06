@@ -27,7 +27,7 @@ wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/snp146CodingDbSnp.t
 Next, you unzip the file:
 
 ```
-guzip snp146CodingDbSnp.txt.gz
+gunzip snp146CodingDbSnp.txt.gz
 ```
 
 Now, you need to understand the structure of the file since you've never seen this dataset before. To do so, you look at the first 10 lines using head:
