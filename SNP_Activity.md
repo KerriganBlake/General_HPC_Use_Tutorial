@@ -111,3 +111,5 @@ for f in *_peptides.txt; do mv "${f}" "${f%.txt}.snp"; done
 For example, S_peptides.snp will become S.snp.
 
 Finally, you to load up the software on the HPC and do a few test runs!
+
+[Return to README](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/README.md)
