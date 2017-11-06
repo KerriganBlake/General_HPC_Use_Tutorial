@@ -54,15 +54,14 @@ awk '$2 == "chr2" && $11 !~ /^n/ { print }' snp146CodingDbSnp.txt > alt_chr2_no_
 
 Now that you have chromosomes 1 and 2, you want to reformat the data for use with a program that requires the following tab-seperated format, with the data ordered by name in a logical numerical order (i.e. rs1, rs2,....rs10, rs11):
 
-| name | chrom:chromStart-chromEnd | peptide1 | peptide2 | ... | 
-| :---: | :---: | :---: | :---: | :---: |
-| rs756427959	| chr1:14397-14400 | A | V | |
-| rs756427959	| chr1:14397-14400| A | A | |
+| name | chrom:chromStart-chromEnd |
+| :---: | :---: | :---: | 
+| rs756427959	| chr1:14397-14400 | 
+| rs756427959	| chr1:14397-14400| 
 
 You decide to test this only on chromsome 1, and start by extracting the relevant columns into yet another file without sorting. To do this, you start by taking advantage of awk's print functionalities to move and reformat your columns as follows:
 
 ```
- awk '{print $5"\t"$2":"$3"-"$4"\t"$12 }' chr1_no_na_snp146CodingDbSnp.txt > unsorted_reformatted_chr1_snp146.txt
+ awk '{print $5"\t"$2":"$3"-"$4 }' chr1_no_na_snp146CodingDbSnp.txt > unsorted_reformatted_chr1_snp146.txt
 ```
 
-Now, you want to remove the final comma in your peptide column before substituting 
