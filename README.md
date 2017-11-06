@@ -1,7 +1,7 @@
 # General_HPC_Use_Tutorial
 A Biophysics and Systems Biology Seminar Series Tutorial
 
-Table of Contents
+Table of Contents <a name="toc"></a>
 =================
 * [Getting Started](https://github.com/KerriganBlake/Parallelized-WES-Analysis/blob/master/Resource_Processing.md#resources)
 * [SNP Activity](https://github.com/KerriganBlake/Parallelized-WES-Analysis/blob/master/Resource_Processing.md#resources)
