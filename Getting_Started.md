@@ -13,7 +13,7 @@ Before performing tasks on the HPC, it is useful to know how to navigate through
 | tail -n# {filename} | list last # lines of {filename} |
 | vi {filename} | view all of {filename} |
 | rm {filename} | permanently delete {filename} |  
-| mv {file} {location} | moves {file} to {location} |
-| cp {file} {location} | copies {file} to {location} |
+| mv {filename} {location} | moves {filename} to {location} |
+| cp {filename} {location} | copies {filename} to {location} |
 
 [Return to README](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/README.md)
