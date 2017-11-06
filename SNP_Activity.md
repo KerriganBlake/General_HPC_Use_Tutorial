@@ -131,6 +131,9 @@ If our interest was only to take our full file and extract out S.snp, T.snp, and
 awk '$2 == "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt |  awk '{print $5"\t"$2":"$3"-"$4"\t"$12 }' | sed 's/,$//' | sed 's/chr//' | sort -V -k 1,1 | awk '$3 ~ /S/ { print }' > alt_S.snp
 ```
 
+### Final Exercise: Generate the following file using the commands you've learned above
+
+
 Finally, you to load up the software on the HPC and do a few test runs!
 
 [Return to README](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/README.md)
