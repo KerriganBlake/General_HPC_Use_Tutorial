@@ -14,3 +14,4 @@ Before performing tasks on the HPC, it is useful to know how to navigate through
 | vi {filename} | view all of {filename} |
 | rm {filename} | permanently delete {filename} | 
 
+[Return to README](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/README.md)
