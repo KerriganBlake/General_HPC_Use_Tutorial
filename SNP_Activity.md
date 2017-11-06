@@ -123,6 +123,14 @@ for f in *_peptides.txt; do mv "${f}" "${f%.txt}.snp"; done
 ### Exercise: Rename .snp files by removing "_peptides" 
 For example, S_peptides.snp will become S.snp.
 
+Using Pipes
+------
+If our interest was only to take our full file and extract out S.snp, T.snp, and Y.snp, we can avoid generating intermediate files by using pipes. The idea is that instead of keeping the intermediate file, we simply pass the would-be result to the next command. For example, to go from our downloaded snp146 file to S.snp, we could have run the following:
+
+```
+awk '$2 == "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt |  awk '{print $5"\t"$2":"$3"-"$4"\t"$12 }' | sed 's/,$//' | sed 's/chr//' | sort -V -k 1,1 | awk '$3 ~ /S/ { print }' > alt_S.snp
+```
+
 Finally, you to load up the software on the HPC and do a few test runs!
 
 [Return to README](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/README.md)
