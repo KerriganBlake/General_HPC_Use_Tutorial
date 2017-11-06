@@ -1,7 +1,7 @@
 Data Parsing: SNP Activity
 ==============
 
-You are a researcher interested in studying SNPs in the coding region of each human chromosome individually. You know that you want to use hg19 and snp146, and you are able to find the location full dataset (including all human chromosomes) through the downloads page of UCSC database. Since you will want to perform a lot of editing on this file, you decide to download it directly onto your university's HPC which has all the software you need. 
+You are a researcher interested in studying SNPs in the coding region of each human chromosome. You know that you want to use hg19 and snp146, and you are able to find the location full dataset (including all human chromosomes) through the downloads page of UCSC database. Since you will want to perform a lot of editing on this file, you decide to download it directly onto your university's HPC which has all the software you need. 
 
 First, you need to login. 
 
@@ -135,6 +135,13 @@ awk '$2 == "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt |  awk '{pri
 ```
 
 ### Final Exercise: Generate the following file using the commands you've learned above
+
+You are now interested in SNPs that include G alleles on the X chromosome. Further, you wish to put these SNPs into a software that requires the following format:
+
+| transcript | chr | chromStart | alleles | alleleCount |
+| :---: | :---: | :---: | :---: | :---: | 
+| NM_001005484| chr1 | 69115	| G:A | 2	| 
+| NM_001005484	| chr1 | 69133	| A:G	| 2	|
 
 
 Finally, you to load up the software on the HPC and do a few test runs!
