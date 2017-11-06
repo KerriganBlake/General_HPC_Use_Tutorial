@@ -56,7 +56,7 @@ Now, you want to remove all lines containing n/a in the codons column since you 
 ```
 awk '$11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > no_na_snp146CodingDbSnp.txt 
 ```
-* In this command, we check the 11th column ($11) for values that do NOT (!~) including (/..../) n/a (which requires the use of \/ to represent /) and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
+* In this command, we check the 11th column ($11) for values that do NOT (!~) include (/..../) n/a (which requires the use of \/ to represent /) and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
 
 Next, you want to extract all of the data for chromosome 1 into a seperate file. You decide to again use awk and check the 2nd columns for chr1:
 
