@@ -108,4 +108,4 @@ for f in *_peptides.txt; do mv "${f}" "${f%.txt}.snp"; done
 ### Exercise: Rename .snp files by removing "_peptides" 
 For example, S_peptides.snp will become S.snp.
 
-Finally, you are ready to submit your files to the software and really get going on your research!
+Finally, you to load up the software on the HPC and do a few test runs!
