@@ -34,7 +34,7 @@ You should see the following (without header labels):
 | 585	| chr1 | 69133	| 69134	| rs781394307	| NM_001005484	| 2	| 2	| 8,42,	| A,G,	| GAA,GGA, | 	E,G, |
 
 
-Extracting Subsections of Data
+Restructure Data
 ------
 
 Now, you want to remove all lines containing n/a in the codons column since you are only interested in amino acid changes. To do this, you run the following command that checks the 11th column (codons) and removes lines containing "n/a" and put it into a new file:
@@ -49,7 +49,6 @@ Next, you want to extract all of the data for chromosome 1 into a seperate file.
 ```
 awk '$2 == "chr1" { print }' no_na_snp146CodingDbSnp.txt > chr1_no_na_snp146CodingDbSnp.txt
 ```
-
 * In this command, we check the 2nd column ($2) for values exactly equal to chr1 ($2 == "chr1") and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
 
 At this point, you realize that you could have removed the na values and seperated the data into chromosomes with a single command using and (&&) with awk. Here is an example of that command:
@@ -62,22 +61,47 @@ Now that you have chromosomes 1 and 2, you want to reformat the data for use wit
 
 | name | chrom#:chromStart-chromEnd | peptides
 | :---: | :---: | :---: | 
-| rs756427959	| 1:14397-14400 | A,V
-| rs757299236	| 1:69115-69116| A, *
+| rs756427959	| 1:14397-14400 | A,V,
+| rs757299236	| 1:69115-69116| A, *,
 
 You decide to test this software only on chromsome 1, and start by extracting the relevant columns into yet another file without sorting. To do this, you start by taking advantage of awk's print functionalities to move and reformat your columns as follows:
 
 ```
  awk '{print $5"\t"$2":"$3"-"$4"\t"$12 }' chr1_no_na_snp146CodingDbSnp.txt > unsorted_reformatted_chr1_snp146.txt
 ```
+* In this command, we print the 5th column of chr1_no_na_snp146CodingDbSnp.txt followed by a tab seperator ("\t") then the 2nd column followed by ":" and so forth and put it into unsorted_reformatted_chr1_snp146.txt
 
+Finally, before reordering the data, you want to remove the trailing "," from the 3rd column of unsorted_reformatted_chr1_snp146.txt file. To do this, it is easiest to use sed as follows:
 
+```
+sed -i 's/,$//' unsorted_reformatted_chr1_snp146.txt
+```
+* In this command, we use sed to replace all "," characters at the end of a line (,$) with nothing. The -i flag means "in-place" so it makes the changes in the original file and does not require a new intermediate. 
+
+Reorder Data
+------
 
 Now, you need to sort the file by name. To do this, you decide to use sort with -V to ensure the correct ordering (this will prevent order like rs1, rs10, rs11, .. rs2,rs20,...):
 
 ```
 sort -V -k 1,1 unsorted_reformatted_chr1_snp146.txt > sorted_reformatted_chr1_snp146.txt
 ```
+* This command sorts the first column (-k 1,1) in order in the "natural sort of (version) numbers within text" with (-V). 
+
+### Exercise: Sort without the -V flag and look at the head and tail of the file
+
+### Exercise: Extract Phsophorylatable Residues into Seperate Files
+
+You decide to investigate phosphorylatable residues (namely, S,T, and Y). To do so, you seperate out your sorted file into three seperate files containing peptides S, T and Y respectively using awk. You will name each file S_peptides.txt, T_peptides.txt, and Y_peptides.txt respectively.
 
 
+
+Renaming Files (Batch)
+------
+After generating the S, T, and Y files, you realize that the software requires files to have a ".snp" extension rather than ".txt". You decide you to rename your files rather than recreating them using bash.
+
+```
+for f in *_peptides.txt; do mv "${f}" "${f%.txt}.snp"; done
+```
+* This command looks for all files with names matching {anything}peptide.txt and "moves" them into a file with a name replacing ".txt" with ".snp".
 
