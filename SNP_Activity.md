@@ -105,7 +105,7 @@ for f in *_peptides.txt; do mv "${f}" "${f%.txt}.snp"; done
 ```
 * This command looks for all files with names matching {anything}peptide.txt and "moves" them into a file with a name replacing ".txt" with ".snp".
 
-### Exercise: Rename .snp files by removing "_peptide" 
+### Exercise: Rename .snp files by removing "_peptides" 
 For example, S_peptides.snp will become S.snp.
 
 Finally, you are ready to submit your files to the software and really get going on your research!
