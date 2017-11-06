@@ -3,6 +3,19 @@ SNP Activity
 
 You are a researcher interested in studying SNPs in the coding region of each human chromosome individually. You know that you want to use hg19 and snp146, and you are able to find the location full dataset (including all human chromosomes) through the downloads page of UCSC database. Since you will want to perform a lot of editing on this file, you decide to download it directly onto your university's HPC which has all the software you need. 
 
+First, you need to login. 
+
+If you have a Mac, you can do this directly from the Terminal by opening a new session and typing:
+
+```
+ssh {your UCNetID}@hpc.oit.uci.edu
+```
+
+If you have a Windows machine, you will need to use an ssh client (for example, Putty). Here, you will input your username and destination (hpc.oit.uci.edu) seperately.
+
+In both cases, you will be prompted for your password before entering the HPC.
+
+
  <a name="download"></a>
 Downloading and Unzipping Files
 ------
