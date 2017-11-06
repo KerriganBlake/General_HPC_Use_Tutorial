@@ -54,10 +54,10 @@ awk '$2 == "chr2" && $11 !~ /^n/ { print }' snp146CodingDbSnp.txt > alt_chr2_no_
 
 Now that you have chromosomes 1 and 2, you want to reformat the data for use with a program that requires the following tab-seperated format, with the data ordered by name in a logical numerical order (i.e. rs1, rs2,....rs10, rs11):
 
-| name | chrom:chromStart-chromEnd |
+| name | chrom#:chromStart-chromEnd |
 | :---: | :---: | :---: | 
-| rs756427959	| chr1:14397-14400 | 
-| rs756427959	| chr1:14397-14400| 
+| rs756427959	| 1:14397-14400 | 
+| rs756427959	| 1:14397-14400| 
 
 You decide to test this only on chromsome 1, and start by extracting the relevant columns into yet another file without sorting. To do this, you start by taking advantage of awk's print functionalities to move and reformat your columns as follows:
 
@@ -65,3 +65,8 @@ You decide to test this only on chromsome 1, and start by extracting the relevan
  awk '{print $5"\t"$2":"$3"-"$4 }' chr1_no_na_snp146CodingDbSnp.txt > unsorted_reformatted_chr1_snp146.txt
 ```
 
+Now, you need to sort the file by name. To do this, you decide to use sort with -V to ensure the correct ordering (this will prevent order like rs1, rs10, rs11, .. rs2,rs20,...):
+
+```
+sort -V -k 1,1 unsorted_reformatted_chr1_snp146.txt > sorted_reformatted_chr1_snp146.txt
+```
