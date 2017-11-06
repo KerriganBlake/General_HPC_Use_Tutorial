@@ -8,5 +8,5 @@ Table of Contents <a name="toc"></a>
   * [Download and Unzip Files](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#download)
   * [Restructure Data](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#restructure)
   * [Reorder Data](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#reorder)
-  * [Rename Sets of Files](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#rename)
+  * [Rename Files (Batch)](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#rename)
 
