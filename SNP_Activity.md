@@ -105,7 +105,7 @@ After generating the S, T, and Y files, you realize that the software requires f
 ```
 for f in *_peptides.txt; do mv "${f}" "${f%.txt}.snp"; done
 ```
-* This command looks for all files with names matching {anything}peptide.txt and "moves" them into a file with a name replacing ".txt" with ".snp".
+* This command looks for all files with names matching {anything}_peptide.txt and "moves" them into a file with a name replacing ".txt" with ".snp".
 
 ### Exercise: Rename .snp files by removing "_peptides" 
 For example, S_peptides.snp will become S.snp.
