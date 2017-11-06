@@ -136,12 +136,23 @@ awk '$2 == "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt |  awk '{pri
 
 ### Final Exercise: Generate the following file using the commands you've learned above
 
-You are now interested in SNPs that include G alleles on the X chromosome. Further, you wish to put these SNPs into a software that requires the following format:
+You are now interested in SNPs that include G alleles on the X chromosome. Further, you wish to put these SNPs into a software that requires the following tab-seperated format ordered by chromStart:
 
 | transcript | chr | chromStart | alleles | alleleCount |
 | :---: | :---: | :---: | :---: | :---: | 
 | NM_001005484| chr1 | 69115	| G:A | 2	| 
 | NM_001005484	| chr1 | 69133	| A:G	| 2	|
+
+You final result should have the following first 5 lines (excluding column headers):
+
+| transcript | chr | chromStart | alleles | alleleCount |
+| :---: | :---: | :---: | :---: | :---: | 
+| NM_018390	| chrX	| 284194	| G:C	| 2 |
+| XM_006724444	| chrX	| 284194	| G:C	| 2 |
+| XM_006724445	| chrX	| 284194	| G:C	| 2 |
+| XM_006724446	| chrX	| 284194	| G:C	| 2 |
+| XM_011546180	| chrX	| 284194	| G:C	| 2 |
+
 
 
 Finally, you to load up the software on the HPC and do a few test runs!
