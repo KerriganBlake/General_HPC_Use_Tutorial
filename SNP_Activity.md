@@ -78,7 +78,7 @@ sed -i 's/,$//' unsorted_reformatted_chr1_snp146.txt
 ```
 * In this command, we use sed to replace all "," characters at the end of a line (,$) with nothing. The -i flag means "in-place" so it makes the changes in the original file and does not require a new intermediate. 
 
-#### Exercise: Use sed to remove "chr" from column 2
+### Exercise: Use sed to remove "chr" from column 2
 
 Reorder Data
 ------
@@ -91,7 +91,7 @@ sort -V -k 1,1 unsorted_reformatted_chr1_snp146.txt > sorted_reformatted_chr1_sn
 * This command sorts the first column (-k 1,1) in order in the "natural sort of (version) numbers within text" with (-V). 
 
 
-#### Exercise: Extract Phsophorylatable Residues into Seperate Files
+### Exercise: Extract Phsophorylatable Residues into Seperate Files
 
 You decide to investigate phosphorylatable residues (namely, S,T, and Y). To do so, you seperate out your sorted file into three seperate files containing peptides S, T and Y respectively using awk. You will name each file S_peptides.txt, T_peptides.txt, and Y_peptides.txt respectively.
 
