@@ -13,7 +13,9 @@ ssh {your UCNetID}@hpc.oit.uci.edu
 
 If you have a Windows machine, you will need to use an ssh client (for example, Putty). Here, you will input your username and destination (hpc.oit.uci.edu) seperately.
 
-In both cases, you will be prompted for your password before entering the HPC. After you have entered the HPC, you should reqest an interactive node by entering the following:
+In both cases, you will be prompted for your password before entering the HPC. 
+
+After you have entered the HPC, you should reqest an interactive node by entering the following. *You should NEVER run code from the login node on the HPC as it slows it down for other users.*
 
 ```
 qrsh
