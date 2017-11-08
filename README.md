@@ -1,5 +1,6 @@
-# General_HPC_Use_Tutorial
-A Biophysics and Systems Biology Seminar Series Tutorial
+# General HPC Use Tutorial
+A Biophysics and Systems Biology Seminar Series Tutorial focused on hands-on examples of data parsing, scipt writing, and parallelization. We also provide links to more detailed tutorials from Harry Mangalam, our local HPC expert at UCI!
+
 
 Table of Contents <a name="toc"></a>
 =================
@@ -13,6 +14,14 @@ Table of Contents <a name="toc"></a>
   * [Rename Files (Batch)](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#rename)
   * [Using Pipes](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#pipe)
   
+Harry's Tutorial Materials: 
+===========
+
+* [Linux Tutorial for HPC](http://moo.nac.uci.edu/~hjm/biolinux/Linux_Tutorial_12.html)
+* [An R Overview & Cheatsheet](http://moo.nac.uci.edu/~hjm/AnRCheatsheet.html)
+* [A Typical Annoying Example of using R/BioConductor](http://moo.nac.uci.edu/~hjm/R_BioC_example.html)
+* [How Programs Work and How to Install Them on Linux (still in beta)](http://moo.nac.uci.edu/~hjm/How_Programs_Work_On_Linux.html)
+* [Manipulating Data on Linux (working on an updated version)](http://moo.nac.uci.edu/~hjm/ManipulatingDataOnLinux.html)
 
 Additional Links
 =================
