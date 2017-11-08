@@ -5,7 +5,6 @@ Before performing tasks on the HPC, it is useful to know how to navigate through
 | command | use |
 | :----: | :----: |
 | ls | list all files |
-| ls -lh | list all files with their filesize |
 | cd {directory name} | enter {directory name} |
 | cd .. | move back one folder from current location |
 | pwd | give current filepath |
@@ -15,5 +14,8 @@ Before performing tasks on the HPC, it is useful to know how to navigate through
 | rm {filename} | permanently delete {filename} |  
 | mv {filename} {location} | moves {filename} to {location} |
 | cp {filename} {location} | copies {filename} to {location} |
+| mkdir {directoryname} | make a new directory with name {directoryname} |
+| ls -lh {filename} | list the size of {filename} in abbreviated units (i.e. 2.4G) |
+| wc -l {filename} | list the number of lines in {filename} |  
 
 [Return to README](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/README.md)
