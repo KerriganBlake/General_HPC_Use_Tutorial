@@ -6,6 +6,7 @@ For an overview of the basic structure of the HPC, see [these slides](https://do
 Additional Links
 =================
 * HPC Homepage: https://hpc.oit.uci.edu/
+* Regular Expression Reference: http://web.mit.edu/hackl/www/lab/turkshop/slides/regex-cheatsheet.pdf
 * Relevant Documentation
   * awk: https://www.gnu.org/software/gawk/manual/gawk.html
   * sed: https://www.gnu.org/software/sed/manual/sed.html
