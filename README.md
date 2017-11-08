@@ -1,6 +1,8 @@
 # General_HPC_Use_Tutorial
 A Biophysics and Systems Biology Seminar Series Tutorial
 
+For an overview of the basic structure of the HPC, see [these slides](https://docs.google.com/a/uci.edu/presentation/d/1tnR9giTg6D4IRl9kz4A9zzgoR-69UCsbn6kEN6JYqEk/edit?usp=sharing)
+
 Table of Contents <a name="toc"></a>
 =================
 * [Getting Started](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/Getting_Started.md)
