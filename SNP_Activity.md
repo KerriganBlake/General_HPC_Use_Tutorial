@@ -87,19 +87,20 @@ Example output:
 Restructure Data
 ------
 
-You want to remove all lines containing n/a in the codons column since you are only interested in amino acid changes. To do this, you run the following command that checks the 11th column (codons) and removes lines containing "n/a" and puts it into a new file:
-
-```
-awk '$11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > no_na_snp146CodingDbSnp.txt 
-```
-* In this command, we check the 11th column ($11) for values that do NOT (!~) include (/..../) n/a (which requires the use of ```\/``` to represent /) and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
-
-Next, you want to extract all of the data for chromosome 1 into a seperate file. You decide to again use awk and check the 2nd column for chr1:
+You want to extract all of the data for chromosome 1 into a seperate file. You decide to use awk and check the 2nd column for chr1:
 
 ```
 awk '$2 == "chr1" { print }' no_na_snp146CodingDbSnp.txt > chr1_no_na_snp146CodingDbSnp.txt
 ```
 * In this command, we check the 2nd column ($2) for values exactly equal to chr1 ($2 == "chr1") and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
+
+
+Next, you want to remove all lines containing n/a in the codons column since you are only interested in amino acid changes. To do this, you run the following command that checks the 11th column (codons) and removes lines containing "n/a" and puts it into a new file:
+
+```
+awk '$11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > no_na_snp146CodingDbSnp.txt 
+```
+* In this command, we check the 11th column ($11) for values that do NOT (!~) include (/..../) n/a (which requires the use of ```\/``` to represent /) and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
 
 At this point, you realize that you could have removed the n/a values and seperated the data into chromosomes with a single command using and (&&) with awk. Here is an example of that command:
 
@@ -111,8 +112,8 @@ You eventually want to process your data with a program that requires the follow
 
 | name | chrom#:chromStart-chromEnd | peptides
 | :---: | :---: | :---: | 
-| rs756427959	| 1:14397-14400 | A,V,
-| rs757299236	| 1:69115-69116| A, *,
+| rs756427959	| 1:14397-14400 | A,V
+| rs757299236	| 1:69115-69116| A, *
 
 You decide to test this software with chromsome 1, and start by extracting the relevant columns into yet another file before sorting. To do this, you take advantage of awk's print functionalities to move and reformat your columns as follows:
 
