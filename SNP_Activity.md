@@ -72,7 +72,7 @@ ls -lh snp146CodingDbSnp.txt
 ```
 
 Example output:
--rw-r--r-- 1 kerrigab bio 2.7G Apr 17  2016 snp146CodingDbSnp.txt
+**-rw-r--r-- 1 kerrigab bio 2.7G Apr 17  2016 snp146CodingDbSnp.txt**
 
 
 ```
@@ -80,14 +80,14 @@ wc -l snp146CodingDbSnp.txt
 ```
 
 Example output:
-34754673 snp146CodingDbSnp.txt
+**34754673 snp146CodingDbSnp.txt**
 
 
  <a name="restructure"></a>
 Restructure Data
 ------
 
-You want to remove all lines containing n/a in the codons column since you are only interested in amino acid changes. To do this, you run the following command that checks the 11th column (codons) and removes lines containing "n/a" and put it into a new file:
+You want to remove all lines containing n/a in the codons column since you are only interested in amino acid changes. To do this, you run the following command that checks the 11th column (codons) and removes lines containing "n/a" and puts it into a new file:
 
 ```
 awk '$11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > no_na_snp146CodingDbSnp.txt 
@@ -107,14 +107,14 @@ At this point, you realize that you could have removed the n/a values and sepera
 awk '$2 == "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > alt_chr1_no_na_snp146CodingDbSnp.txt
 ```
 
-You also want to process your data with a program that requires the following tab-seperated format, with the data ordered by name in a logical numerical order (i.e. rs1, rs2,....rs10, rs11):
+You eventually want to process your data with a program that requires the following tab-seperated format, with the data ordered by name in a logical numerical order (i.e. rs1, rs2,....rs10, rs11):
 
 | name | chrom#:chromStart-chromEnd | peptides
 | :---: | :---: | :---: | 
 | rs756427959	| 1:14397-14400 | A,V,
 | rs757299236	| 1:69115-69116| A, *,
 
-You decide to test this software with chromsome 1, and start by extracting the relevant columns fron that subset into yet another file without sorting. To do this, you start by taking advantage of awk's print functionalities to move and reformat your columns as follows:
+You decide to test this software with chromsome 1, and start by extracting the relevant columns into yet another file before sorting. To do this, you take advantage of awk's print functionalities to move and reformat your columns as follows:
 
 ```
  awk '{print $5"\t"$2":"$3"-"$4"\t"$12 }' chr1_no_na_snp146CodingDbSnp.txt > unsorted_reformatted_chr1_snp146.txt
@@ -144,7 +144,7 @@ sort -V -k 1,1 unsorted_reformatted_chr1_snp146.txt > sorted_reformatted_chr1_sn
 
 ### Exercise: Extract phsophorylatable residues into seperate files
 
-You decide to investigate phosphorylatable residues (namely, S,T, and Y). To do so, you seperate out your sorted file into three seperate files containing peptides S, T and Y respectively using awk. You will name each file S_peptides.txt, T_peptides.txt, and Y_peptides.txt respectively.
+You decide to investigate phosphorylatable residues (namely, S,T, and Y). To do so, you seperate out your sorted file into three seperate files containing peptides S, T and Y using awk. You will name each file S_peptides.txt, T_peptides.txt, and Y_peptides.txt respectively.
 
  <a name="rename"></a>
 Renaming Files (Batch)
