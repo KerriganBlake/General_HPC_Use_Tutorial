@@ -1,5 +1,5 @@
 # General HPC Use Tutorial
-A Biophysics and Systems Biology Seminar Series Tutorial focused on hands-on examples of data parsing, scipt writing, and parallelization. The materials provided here directly are from graduate students who are users, but not necessarily masters, of the HPC. Luckily, we are also able to provide links to more detailed tutorials from Harry Mangalam, our local HPC expert at UCI!
+A Biophysics and Systems Biology Seminar Series Tutorial focused on hands-on examples of data parsing, scipt writing, and parallelization. The materials provided here directly are from graduate students who are frequent users, but not necessarily masters, of the HPC. Luckily, we are also able to provide links to more detailed tutorials from Harry Mangalam, our local HPC expert at UCI!
 
 
 Table of Contents <a name="toc"></a>
