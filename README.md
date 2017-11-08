@@ -11,4 +11,5 @@ Table of Contents <a name="toc"></a>
   * [Restructure Data](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#restructure)
   * [Reorder Data](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#reorder)
   * [Rename Files (Batch)](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#rename)
+  * [Using Pipes](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#pipe)
 
