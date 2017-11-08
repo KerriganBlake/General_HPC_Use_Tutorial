@@ -1,5 +1,7 @@
 Getting Started
 =====================
+
+<a name="commands"></a>
 Before performing tasks on the HPC, it is useful to know how to navigate through a linux command-line. Some basic commands include:
 
 | command | use |
