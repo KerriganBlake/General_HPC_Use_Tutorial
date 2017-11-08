@@ -100,7 +100,7 @@ Next, you want to remove all lines containing n/a in the codons column since you
 ```
 awk '$11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > no_na_snp146CodingDbSnp.txt 
 ```
-* In this command, we check the 11th column ($11) for values that do NOT (!~) include (/..../) n/a (which requires the use of ```\/``` to represent /) and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
+* In this command, we check the 11th column ($11) for values that do NOT include (!~) n/a (which requires the use of ```\/``` to represent /) and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
 
 At this point, you realize that you could have removed the n/a values and seperated the data into chromosomes with a single command using and (&&) with awk. Here is an example of that command:
 
