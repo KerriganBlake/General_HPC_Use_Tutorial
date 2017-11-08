@@ -90,7 +90,7 @@ Restructure Data
 You want to extract all of the data for chromosome 1 into a seperate file. You decide to use awk and check the 2nd column for chr1:
 
 ```
-awk '$2 ~ "chr1" { print }' no_na_snp146CodingDbSnp.txt > chr1_no_na_snp146CodingDbSnp.txt
+awk '$2 == "chr1" { print }' no_na_snp146CodingDbSnp.txt > chr1_no_na_snp146CodingDbSnp.txt
 ```
 * In this command, we check the 2nd column ($2) for values exactly equal to chr1 ($2 == "chr1") and print them to a new file ('... { print }' ${file} > ${new_file}) using awk.
 
@@ -105,7 +105,7 @@ awk '$11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > no_na_snp146CodingDbSnp.tx
 At this point, you realize that you could have removed the n/a values and seperated the data into chromosomes with a single command using and (&&) with awk. Here is an example of that command:
 
 ```
-awk '$2 ~ "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > alt_chr1_no_na_snp146CodingDbSnp.txt
+awk '$2 == "chr1" && $11 !~ /n\/a/ { print }' snp146CodingDbSnp.txt > alt_chr1_no_na_snp146CodingDbSnp.txt
 ```
 
 You eventually want to process your data with a program that requires the following tab-seperated format, with the data ordered by name in a logical numerical order (i.e. rs1, rs2,....rs10, rs11):
