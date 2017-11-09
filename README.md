@@ -16,8 +16,8 @@ Table of Contents <a name="toc"></a>
 * [Parallelizing Computation: Rotation Example](Rotation_Example/Rotation_Example.md)
   * [Problem Statement and Plan of Attack](Rotation_Example/Rotation_Example.md#intro)
   * [C Code for Generating Rotations](Rotation_Example/Rotation_Example.md#C)
-  * [Compiling and Running](Rotation_Example/Rotation_Example.md#Compiling-and-Running)
-  * [Running many simulations on the HPC](Rotation_Example/Rotation_Example.md#Running-many-simulations-on-the-HPC)
+  * [Compiling and Running](Rotation_Example/Rotation_Example.md#compiling-and-running)
+  * [Running many simulations on the HPC](Rotation_Example/Rotation_Example.md#running-many-simulations-on-the-hpc)
 
 Harry's Tutorial Materials:
 ===========
