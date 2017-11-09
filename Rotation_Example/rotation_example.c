@@ -20,6 +20,7 @@ double p[3]; //rotated point
 
 int i, j; //loop counters
 int steps=10; //number of times to rotate
+int verbose=0;
 
 //include our C file written by Mathematica
 #include "quaternion_formulae.c"
@@ -42,7 +43,9 @@ int main()
     p0[1]=0;
     p0[2]=0;
     //output that point
-    printf("step x        y        z        length\n%d %f %f %f\n",0,p0[0],p0[1],p0[2]);
+    if(verbose){
+        printf("step x        y        z        length\n%d %f %f %f\n",0,p0[0],p0[1],p0[2]);
+    }
 
     //generate rotations
     for(i=0;i<steps;i++){
@@ -66,13 +69,17 @@ int main()
         }
 
         //if we want to output, rotate the initial point by the current quaternion
-        if(i%1==0){
+        if(verbose && i%1==0){
             //defined in quaternion_formulae.c, written by Mathematica
             rotate_point();
             printf("%d %f %f %f %f\n",i+1,p[0],p[1],p[2],sqrt(pow(p[0],2) + pow(p[1],2) + pow(p[2],2)));
         }
 
     }
+    //output final quaternion
+    printf("Final quaternion is: %f %f %f %f\n",q[0],q[1],q[2],q[3]);
+    rotate_point();
+    printf("Point (%f,%f,%f) rotates to (%f,%f,%f)\n",p0[0],p0[1],p0[2],p[0],p[1],p[2]);
 }
 
 void generate_rand_normal(){

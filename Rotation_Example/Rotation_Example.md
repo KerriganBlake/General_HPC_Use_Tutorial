@@ -39,3 +39,31 @@ After including files and defining the necessary variables and including files, 
 
 <a name="Mathematica"></a>
 ## Mathematica Notebook on Quaternion Math
+
+The Mathematica notebook [Generate rotations.nb](Generate rotations.nb) has explanations of how it gets to the equations which transform and compose the rotations. Check it out there!
+
+When run, the notebook writes a series of strings to a text file, which together make up what looks mostly like a correct C file. A copy of this raw file is included in [quaternion_formulae_raw.c](quaternion_formulae_raw.c).
+
+<a name="sed"></a>
+### Converting to correct C with sed
+
+If you stare at [quaternion_formulae_raw.c](quaternion_formulae_raw.c) long enough, you notice it really is basically C code, just with some things replaced. For instance, function names are capitalized and array accession is in parentheses instead of square brackets. With sed, we can go through the text file and replace things with the correct form. [CFormToC.sh](CFormToC.sh) is a bash file which calls sed to accomplish this task. We can run from the command line by
+```
+$ ./CFormToC.sh
+```
+After it does the text replacement, [quaternion_formulae.c](quaternion_formulae.c) is convert from raw form to converted form, which can be complied.
+
+## Compiling and Running
+
+C code must be complied before it can be run. This can be accomplished by
+```
+$ gcc rotation_example.c -o rotation.x
+```
+which generates an executable rotation.x. This can then be run with
+```
+$ ./rotation.x
+```
+Which should output our final quaternion and where the example point rotates to.
+
+<!-- <a name="HPC"></a> -->
+## Running many simulations on the HPC
