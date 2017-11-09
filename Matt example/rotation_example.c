@@ -1,5 +1,5 @@
 //C code that simulates random rotation of a point about the origin
-//written by Matt Bovyn 2016
+//written by Matt Bovyn 2017
 //mbovyn@uci.edu
 
 #include <stdlib.h>
@@ -7,11 +7,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "twister.c"
+#include "twister.c" //generates random numbers
 
 //initialize variables
 #define pi 3.14159265359
-
 double v[3]; //rotation vector
 double rand1, rand2, randn1, randn2; //random numbers
 double q[4]; //quaternion
@@ -19,10 +18,12 @@ double newq[4]; //updated quaternion
 double p0[3]; //initial point
 double p[3]; //rotated point
 
-int i, j;
+int i, j; //loop counters
 int steps=10; //number of times to rotate
 
+//include our C file written by Mathematica
 #include "quaternion_formulae.c"
+//declare the function we'll put below main()
 void generate_rand_normal();
 
 int main()
@@ -40,12 +41,15 @@ int main()
     p0[0]=1;
     p0[1]=0;
     p0[2]=0;
+    //output that point
     printf("step x        y        z        length\n%d %f %f %f\n",0,p0[0],p0[1],p0[2]);
 
-    //for each new rotation
+    //generate rotations
     for(i=0;i<steps;i++){
 
-        //create rotation vector
+        //create rotation vector from 3 random numbers
+        //to do this we need to be able to generate gaussian random variables
+        //this function does that (see below)
         generate_rand_normal();
         v[0]=randn1;
         v[1]=randn2;
@@ -53,14 +57,17 @@ int main()
         v[2]=randn1;
 
         //convert to quaternion and compose with existing rotation
+        //defined in quaternion_formulae.c, written by Mathematica
         compose_rotations();
 
+        //update quaternion values
         for(j=0;j<4;j++){
             q[j]=newq[j];
         }
 
         //if we want to output, rotate the initial point by the current quaternion
         if(i%1==0){
+            //defined in quaternion_formulae.c, written by Mathematica
             rotate_point();
             printf("%d %f %f %f %f\n",i+1,p[0],p[1],p[2],sqrt(pow(p[0],2) + pow(p[1],2) + pow(p[2],2)));
         }

@@ -14,6 +14,8 @@ Table of Contents <a name="toc"></a>
   * [Rename Files (Batch)](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#rename)
   * [Using Pipes](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#pipe)
 * [Parallelizing Computation: Rotation Example](Rotation_Example.md)
+  * [Problem Statement and Plan of Attack](Rotation_Example.md#intro)
+  * [C Code for Generating Rotations](Rotation_Example.md#C)
 
 Harry's Tutorial Materials:
 ===========
