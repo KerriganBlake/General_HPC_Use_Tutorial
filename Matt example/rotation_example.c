@@ -1,3 +1,7 @@
+//C code that simulates random rotation of a point about the origin
+//written by Matt Bovyn 2016
+//mbovyn@uci.edu
+
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>

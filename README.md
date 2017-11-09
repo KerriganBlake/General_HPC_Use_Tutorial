@@ -13,8 +13,9 @@ Table of Contents <a name="toc"></a>
   * [Reorder Data](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#reorder)
   * [Rename Files (Batch)](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#rename)
   * [Using Pipes](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#pipe)
-  
-Harry's Tutorial Materials: 
+* [Parallelizing Computation: Rotation Example](Rotation_Example.md)
+
+Harry's Tutorial Materials:
 ===========
 
 * [Linux Tutorial for HPC](http://moo.nac.uci.edu/~hjm/biolinux/Linux_Tutorial_12.html)

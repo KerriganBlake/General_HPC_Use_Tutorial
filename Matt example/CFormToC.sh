@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#bash script which takes output from Mathematica's CForm
+#and converts it to vanilla C code
+
+#written by Matt Bovyn 2017
+#mbovyn@uci.edu
+
 fname=quaternion_formulae.c
 
 #sed: -i '' -> write in place, don't save a backup copy (would specify filename in '')
