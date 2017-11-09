@@ -57,7 +57,7 @@ After it does the text replacement, [quaternion_formulae.c](quaternion_formulae.
 
 C code must be complied before it can be run. This can be accomplished by
 ```
-$ gcc rotation_example.c -o rotation.x
+$ gcc rotation_example.c -o rotation.x -lm
 ```
 which generates an executable rotation.x. This can then be run with
 ```
@@ -67,3 +67,23 @@ Which should output our final quaternion and where the example point rotates to.
 
 <!-- <a name="HPC"></a> -->
 ## Running many simulations on the HPC
+
+This code will run on the HPC in much the same way it runs on your local machine - we'll just be able to run many copies of it at the same time.
+
+To get this code running on the HPC, you need to:
+* Transfer files to HPC from your computer (I use FileZilla)
+  * C code
+    * rotation_example.c
+    * quaternion_formulae.c
+    * twister.c
+    * ISEED
+  * Pub making and submission script
+    * make_and_submit_Pubs.pl
+* Compile (executables do not transfer!) Compile command is the same as above.
+* Create and submit pub files (see [make_and_submit_Pubs.pl](make_and_submit_Pubs.pl))
+
+Once the jobs are running, you can check them with
+```
+qstat -u USERNAME
+```
+Output that would normally go onto the screen goes into the log.
