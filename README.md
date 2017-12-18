@@ -7,6 +7,7 @@ Table of Contents <a name="toc"></a>
 * [Getting Started](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/Getting_Started.md)
   * [Basic HPC Structure Overview](https://docs.google.com/a/uci.edu/presentation/d/1tnR9giTg6D4IRl9kz4A9zzgoR-69UCsbn6kEN6JYqEk/edit?usp=sharing)
   * [Linux Commands](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/Getting_Started.md#commands)
+  * [Example Script](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/edited_workshop.sh)
 * [Data Parsing (awk and sed): SNP Activity](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md)
   * [Download and Unzip Files](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#download)
   * [Restructure Data](https://github.com/KerriganBlake/General_HPC_Use_Tutorial/blob/master/SNP_Activity.md#restructure)
